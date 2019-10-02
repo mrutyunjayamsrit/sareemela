@@ -2,6 +2,8 @@ const http = require('http');
 const path = require('path');
 const express = require('express');
 
+const PORT= process.env.PORT || 5000;
+
 const errorController = require('./controllers/error');
 
 const adminRoutes = require('./routes/admin');
@@ -27,6 +29,6 @@ app.use(shopRoute);
 
 app.use(errorController.get404);
   
-app.listen(3000, () => {
-   // console.log(`Server started on port`);
+app.listen(PORT, () => {
+   console.log(`Server started on port: ${PORT}`);
 });
